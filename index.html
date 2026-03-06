@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -86,9 +86,12 @@
   }
 
   @media (max-width: 639px) {
+    /* Testimonials: extra top space for avatar overflow */
     .testimonials-grid { padding-top: 2rem; }
+    /* Scarcity dots: wrap on tiny screens */
     .scarcity-dots { gap: 0.4rem !important; }
     .scarcity-dot { width: 1.75rem !important; height: 1.75rem !important; font-size: 0.7rem !important; }
+    /* FAQ question text smaller on xs */
     .faq-trigger span.font-heading { font-size: 0.875rem; }
   }
 </style>
@@ -170,6 +173,7 @@
 
     </div><!-- end text column -->
     <div class="hidden md:flex items-center justify-center">
+      <!-- SWAP: hero-portrait | concept: confident young Indian professional, natural smile, relaxed presence -->
       <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=720&auto=format&fit=crop&q=70" alt="Confident young man" class="w-full aspect-[4/5] object-cover rounded-3xl shadow-2xl ring-4 ring-terracotta/20">
     </div>
     </div><!-- end grid -->
@@ -188,6 +192,7 @@
 
     <div class="grid md:grid-cols-2 gap-6 mb-12">
 
+      <!-- SWAP: pain-blank-mind | concept: young man at social gathering, looking uncertain/frozen while people chat around him -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=600&auto=format&fit=crop&q=60" alt="Man frozen in social situation" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -195,6 +200,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-comparison | concept: group at an office party, one man watching another confidently talk to people -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&auto=format&fit=crop&q=60" alt="Group at a social gathering" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -202,6 +208,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-ghosted | concept: close-up of phone showing a chat conversation, last message unanswered -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&auto=format&fit=crop&q=60" alt="Unanswered message on phone" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -209,6 +216,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-arranged-meeting | concept: two people sitting formally across a small table with tea cups, meet-the-family context -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&auto=format&fit=crop&q=60" alt="Formal arranged meeting context" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -216,6 +224,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-missed-moment | concept: man sitting alone at a cafe looking out the window, wistful, waiting -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&auto=format&fit=crop&q=60" alt="Man alone, a moment missed" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -223,6 +232,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-youtube | concept: man alone at night watching laptop, video content playing on screen -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&auto=format&fit=crop&q=60" alt="Man watching videos alone at night" class="w-full aspect-[16/9] object-cover opacity-70">
         <div class="p-7">
@@ -230,6 +240,7 @@
         </div>
       </div>
 
+      <!-- SWAP: pain-dead-call | concept: man holding phone away from ear, looking at it blankly/frustrated -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden md:col-span-2 reveal">
         <img src="https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&auto=format&fit=crop&q=60" alt="Man frustrated on a silent phone call" class="w-full aspect-[21/9] object-cover opacity-70">
         <div class="p-7">
@@ -255,6 +266,7 @@
 <section class="py-24 bg-white border-y border-gray-100">
   <div class="max-w-4xl mx-auto px-6">
     <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-10 text-center reveal">What This Is Actually Costing You</h2>
+    <!-- SWAP: real-cost-wide | concept: hourglass or silhouette at sunset — time passing, cost accumulating -->
     <figure class="mb-12 reveal">
       <img src="https://images.unsplash.com/photo-1501139083538-0139583c060f?w=1200&auto=format&fit=crop&q=70" alt="Time passing — the real cost of staying stuck" class="w-full aspect-[21/7] object-cover rounded-2xl shadow-md">
     </figure>
@@ -279,35 +291,79 @@
 
     <div class="grid md:grid-cols-2 gap-6 reveal">
 
+      <!-- BEFORE panel -->
       <div class="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm">
         <div class="flex items-center gap-3 px-6 py-4 bg-gray-50 border-b border-gray-200">
           <span class="w-7 h-7 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 flex-shrink-0 text-sm font-bold">&#10005;</span>
           <span class="font-heading font-bold text-base text-navy/70 uppercase tracking-wider text-sm">Without This</span>
         </div>
         <ul class="divide-y divide-gray-100">
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">You freeze the moment she looks at you. Mind goes blank. You walk away feeling stupid.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">You replay the conversation at 1 AM thinking of what you should have said.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">You watch another guy hold her attention for 30 minutes while you stand in the corner.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">Every arranged meeting feels like a formal interview you cannot prepare for.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">You send a text, then stare at the phone for one hour waiting for her reply.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">Phone calls with girls feel awkward and die after 2 minutes of silence.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span><p class="text-mutedText text-sm leading-relaxed">You feel like confidence is something other men were born with.</p></li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">You freeze the moment she looks at you. Mind goes blank. You walk away feeling stupid.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">You replay the conversation at 1 AM thinking of what you should have said.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">You watch another guy hold her attention for 30 minutes while you stand in the corner.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">Every arranged meeting feels like a formal interview you cannot prepare for.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">You send a text, then stare at the phone for one hour waiting for her reply.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">Phone calls with girls feel awkward and die after 2 minutes of silence.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 mt-2 flex-shrink-0"></span>
+            <p class="text-mutedText text-sm leading-relaxed">You feel like confidence is something other men were born with.</p>
+          </li>
         </ul>
       </div>
 
+      <!-- AFTER panel -->
       <div class="bg-terracotta/[0.05] border border-terracotta/25 rounded-3xl overflow-hidden shadow-sm">
         <div class="flex items-center gap-3 px-6 py-4 bg-terracotta border-b border-terracotta/20">
           <span class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-white flex-shrink-0 text-sm font-bold">&#10003;</span>
           <span class="font-heading font-bold text-base text-white uppercase tracking-wider text-sm">With Bond Style Method</span>
         </div>
         <ul class="divide-y divide-terracotta/10">
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You hold eye contact, feel calm, and the words come out naturally. No rehearsing in your head.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You leave conversations feeling good about how you showed up, no matter what happened.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You are the one she is engaged with, not because of lines, but because of how you make her feel.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You walk into family meetings relaxed, present, and genuinely likeable.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You text with ease. No overthinking every word. No anxiety waiting for a reply.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">Phone calls flow. She is laughing. She wants to stay on longer.</p></li>
-          <li class="flex items-start gap-3 px-6 py-5"><span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span><p class="text-navy font-semibold text-sm leading-relaxed">You realise it was always a skill, and now it is yours permanently.</p></li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You hold eye contact, feel calm, and the words come out naturally. No rehearsing in your head.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You leave conversations feeling good about how you showed up, no matter what happened.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You are the one she is engaged with, not because of lines, but because of how you make her feel.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You walk into family meetings relaxed, present, and genuinely likeable.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You text with ease. No overthinking every word. No anxiety waiting for a reply.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">Phone calls flow. She is laughing. She wants to stay on longer.</p>
+          </li>
+          <li class="flex items-start gap-3 px-6 py-5">
+            <span class="text-terracotta font-bold flex-shrink-0 mt-0.5 text-sm">&#10003;</span>
+            <p class="text-navy font-semibold text-sm leading-relaxed">You realise it was always a skill, and now it is yours permanently.</p>
+          </li>
         </ul>
       </div>
 
@@ -332,6 +388,7 @@
 
     <div class="grid md:grid-cols-3 gap-8">
 
+      <!-- SWAP: method-diagnose | concept: magnifying glass, analysis, discovery, finding root cause -->
       <div class="bg-cream/50 rounded-xl border border-terracotta/10 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=60" alt="Discovery and analysis" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -341,6 +398,7 @@
         </div>
       </div>
 
+      <!-- SWAP: method-rewire | concept: brain neural pathway rewiring, new connections, two paths old tangled vs new straight -->
       <div class="bg-cream/50 rounded-xl border border-terracotta/10 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&auto=format&fit=crop&q=60" alt="Brain rewiring, new neural pathways" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -350,6 +408,7 @@
         </div>
       </div>
 
+      <!-- SWAP: method-deploy | concept: man striding forward confidently, action and forward movement -->
       <div class="bg-cream/50 rounded-xl border border-terracotta/10 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1560250097-09c21e5f7d1e?w=600&auto=format&fit=crop&q=60" alt="Man walking forward confidently" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -379,6 +438,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
 
+      <!-- SWAP: social-os-in-person | concept: two people in genuine engaged conversation, coffee shop or casual setting -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&auto=format&fit=crop&q=60" alt="Two people in genuine conversation" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -387,6 +447,7 @@
         </div>
       </div>
 
+      <!-- SWAP: social-os-texting | concept: close-up of relaxed hands texting, natural lighting, casual context -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&auto=format&fit=crop&q=60" alt="Person texting casually and relaxed" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -395,6 +456,7 @@
         </div>
       </div>
 
+      <!-- SWAP: social-os-phone | concept: person laughing genuinely on a phone call, warm natural light -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1484863137850-59afcfe05386?w=600&auto=format&fit=crop&q=60" alt="Person laughing on a phone call" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -403,6 +465,7 @@
         </div>
       </div>
 
+      <!-- SWAP: social-os-strangers | concept: vibrant social gathering, wedding crowd or busy city café -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1555680972-a04b76b3750c?w=600&auto=format&fit=crop&q=60" alt="Vibrant social gathering" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -411,6 +474,7 @@
         </div>
       </div>
 
+      <!-- SWAP: social-os-women | concept: man and woman in natural warm easy conversation, not staged -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=600&auto=format&fit=crop&q=60" alt="Man and woman in natural conversation" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -419,6 +483,7 @@
         </div>
       </div>
 
+      <!-- SWAP: social-os-work | concept: man confidently speaking in a meeting or presenting, colleagues listening -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=60" alt="Man presenting confidently at work" class="w-full aspect-[16/9] object-cover opacity-75">
         <div class="p-7">
@@ -449,6 +514,7 @@
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
 
+      <!-- SWAP: benefit-flowing-conversation | concept: man in mid-conversation, naturally animated, clearly flowing, not posed -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1529139574571-6ef08073a527?w=600&auto=format&fit=crop&q=60" alt="Man in natural flowing conversation" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -457,6 +523,7 @@
         </div>
       </div>
 
+      <!-- SWAP: benefit-night-peace | concept: peaceful rest, calm night room, end of 1 AM overthinking -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=600&auto=format&fit=crop&q=60" alt="Peaceful rest at night" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -465,6 +532,7 @@
         </div>
       </div>
 
+      <!-- SWAP: benefit-enter-confident | concept: man entering a lit social gathering confidently, shot from behind -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1569670116820-b8fc4f7fb63b?w=600&auto=format&fit=crop&q=60" alt="Person entering social event confidently" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -473,6 +541,7 @@
         </div>
       </div>
 
+      <!-- SWAP: benefit-genuine-joy | concept: genuine group laughter, mixed social group, natural and unposed -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1515378060890-d4db2bd5e78c?w=600&auto=format&fit=crop&q=60" alt="Genuine laughter in social setting" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -481,6 +550,7 @@
         </div>
       </div>
 
+      <!-- SWAP: benefit-calm-mind | concept: man with calm clear settled expression, looking relaxed and present -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60" alt="Man with calm, present expression" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -489,6 +559,7 @@
         </div>
       </div>
 
+      <!-- SWAP: benefit-authentic-self | concept: close-up portrait of man looking directly at camera, authentic, unposed -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=60" alt="Authentic man portrait, direct and natural" class="w-full aspect-[16/9] object-cover">
         <div class="p-8">
@@ -519,6 +590,7 @@
     <div class="testimonials-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
       <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
+        <!-- SWAP: testimonial-bangalore | concept: Bangalore city / tech office, ambient bg at opacity-[0.04] -->
         <div class="absolute inset-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1596156874760-d41e4a4d0fb5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
         </div>
@@ -531,9 +603,11 @@
       </div>
 
       <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 border-2 border-terracotta/50 ring-2 ring-terracotta/25 ring-offset-2 ring-offset-cream overflow-hidden reveal">
+        <!-- Featured badge -->
         <div class="absolute top-4 right-4 z-10">
           <span class="inline-flex items-center gap-1 bg-terracotta text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">&#9733; Featured</span>
         </div>
+        <!-- SWAP: testimonial-pune | concept: Pune / corporate professional context, ambient bg at opacity-[0.04] -->
         <div class="absolute inset-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1577859849635-02cd5e83dde2?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
         </div>
@@ -546,6 +620,7 @@
       </div>
 
       <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
+        <!-- SWAP: testimonial-mumbai | concept: Mumbai skyline / startup office, ambient bg at opacity-[0.04] -->
         <div class="absolute inset-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1529931007293-0dfec93c0b22?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
         </div>
@@ -558,6 +633,7 @@
       </div>
 
       <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
+        <!-- SWAP: testimonial-hyderabad | concept: Hyderabad tech / data analytics context, ambient bg at opacity-[0.04] -->
         <div class="absolute inset-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
         </div>
@@ -570,6 +646,7 @@
       </div>
 
       <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
+        <!-- SWAP: testimonial-chennai | concept: Chennai city / civil engineering infrastructure, ambient bg at opacity-[0.04] -->
         <div class="absolute inset-0 pointer-events-none">
           <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
         </div>
@@ -623,7 +700,7 @@
           <li class="flex items-start gap-3"><span class="text-terracotta mt-0.5 flex-shrink-0 font-bold">&#10005;</span><span class="text-white/60">You are looking for a quick fix or magic pickup lines</span></li>
           <li class="flex items-start gap-3"><span class="text-terracotta mt-0.5 flex-shrink-0 font-bold">&#10005;</span><span class="text-white/60">You are not willing to do real-world practice</span></li>
           <li class="flex items-start gap-3"><span class="text-terracotta mt-0.5 flex-shrink-0 font-bold">&#10005;</span><span class="text-white/60">You want someone to do the work for you</span></li>
-          <li class="flex items-start gap-3"><span class="text-terracotta mt-0.5 flex-shrink-0 font-bold">&#10005;</span><span class="text-white/60">You are okay if you don&apos;t improve</span></li>
+          <li class="flex items-start gap-3"><span class="text-terracotta mt-0.5 flex-shrink-0 font-bold">&#10005;</span><span class="text-white/60">You are okay if you don't improve</span></li>
         </ul>
       </div>
 
@@ -643,6 +720,7 @@
 
     <div class="grid md:grid-cols-3 gap-6 mb-12">
 
+      <!-- SWAP: call-listen | concept: someone listening intently, leaning forward, warm attentive expression -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?w=600&auto=format&fit=crop&q=60" alt="Attentive listening in conversation" class="w-full aspect-[16/9] object-cover">
         <div class="p-7">
@@ -652,6 +730,7 @@
         </div>
       </div>
 
+      <!-- SWAP: call-diagnose | concept: thoughtful analytical moment, deep-thought expression, finding root cause -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&auto=format&fit=crop&q=60" alt="Thoughtful diagnosis and discovery" class="w-full aspect-[16/9] object-cover">
         <div class="p-7">
@@ -661,6 +740,7 @@
         </div>
       </div>
 
+      <!-- SWAP: call-decision | concept: fork in a road or person at doorway about to step through, next step decision -->
       <div class="bg-cream/60 rounded-2xl border border-gray-100 shadow-sm overflow-hidden reveal">
         <img src="https://images.unsplash.com/photo-1519817650390-64a8e4d12870?w=600&auto=format&fit=crop&q=60" alt="Crossroads and decision point" class="w-full aspect-[16/9] object-cover">
         <div class="p-7">
@@ -757,6 +837,7 @@
 
 <!-- SECTION 11 — SCARCITY -->
 <section class="py-20 bg-terracotta relative overflow-hidden">
+  <!-- SWAP: scarcity-bg | concept: velvet rope / exclusive access / nearly-full venue -->
   <div class="absolute inset-0 pointer-events-none">
     <img src="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?w=1200&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.08]">
   </div>
@@ -794,6 +875,7 @@
 
 <!-- SECTION 12 — FINAL CTA -->
 <section class="py-24 bg-navy relative overflow-hidden" id="apply">
+  <!-- SWAP: final-cta-bg | concept: confident Indian man looking forward, decisive, path opening ahead -->
   <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560250097-09c21e5f7d1e?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-10 pointer-events-none"></div>
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
 
@@ -858,7 +940,9 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Card lift — light bg cards
     document.querySelectorAll('.bg-cream\\/50, .bg-cream\\/60, .bg-white.shadow-soft').forEach(el => el.classList.add('card-lift'));
+    // Card lift — dark bg cards (pain, social-os)
     document.querySelectorAll('.bg-white\\/5.border').forEach(el => el.classList.add('card-lift-dark'));
   });
 
