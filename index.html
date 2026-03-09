@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -82,8 +82,21 @@
   #calendly-modal.open { display: flex; }
   @media (max-width: 639px) {
     #calendly-modal-inner { max-height: 92vh; overflow-y: auto; }
-    #calendly-iframe { height: 75vh !important; min-height: 460px; }
   }
+  /* Booking form panels */
+  #booking-cal-panel #my-cal-inline-30min { width: 100%; height: 600px; }
+  @media (max-width: 639px) { #booking-cal-panel #my-cal-inline-30min { height: 75vh; min-height: 460px; } }
+  .booking-panel { transition: opacity 0.3s ease, transform 0.3s ease; }
+  .booking-panel.hidden { display: none; }
+  @keyframes bookingSlideIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  .booking-panel:not(.hidden) { animation: bookingSlideIn 0.35s ease; }
+  @keyframes btnSpin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+  .btn-spinner { width:18px;height:18px;border:2px solid rgba(255,255,255,0.35);border-top-color:#fff;border-radius:50%;animation:btnSpin 0.8s linear infinite;display:inline-block;flex-shrink:0; }
+  .booking-input { width:100%;padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #d1d5db;background:#f9fafb;outline:none;transition:border-color 0.15s,box-shadow 0.15s;color:#1f2937;-webkit-text-fill-color:#1f2937;font-size:0.9375rem; }
+  .booking-input:hover { border-color:#9ca3af; }
+  .booking-input:focus { border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.12);background:#fff; }
+  .booking-input.input-error { border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.10); }
+  .booking-input:-webkit-autofill,.booking-input:-webkit-autofill:focus { -webkit-box-shadow:0 0 0 30px #f9fafb inset!important;-webkit-text-fill-color:#1f2937!important; }
 
   @media (max-width: 639px) {
     /* Testimonials: extra top space for avatar overflow */
@@ -1081,13 +1094,86 @@
   </div>
 </footer>
 
-<!-- CALENDLY MODAL -->
+<!-- BOOKING MODAL -->
 <div id="calendly-modal" class="fixed inset-0 z-[100] items-center justify-center bg-black/60 backdrop-blur-sm p-4" onclick="handleModalBgClick(event)">
-  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-2xl relative overflow-hidden" id="calendly-modal-inner">
+  <div id="calendly-modal-inner" class="bg-white rounded-3xl shadow-2xl w-full relative overflow-hidden transition-all duration-300" style="max-width:480px">
     <button onclick="closeCalendly()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors">
       <span class="material-symbols-outlined text-gray-600 text-xl" style="font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24">close</span>
     </button>
-    <iframe id="calendly-iframe" src="about:blank" data-src="https://calendly.com/your-link/30min" width="100%" height="600" frameborder="0" style="border-radius:0.5rem; display:block;" title="Book a free clarity call"></iframe>
+
+    <!-- STEP 1: Form -->
+    <div id="booking-form-panel" class="booking-panel p-8">
+      <div class="mb-6 pr-8">
+        <h2 class="text-2xl font-bold text-gray-900 font-heading">Book a Free Call</h2>
+        <p class="text-gray-500 mt-1 text-sm">Fill in your details to schedule your 30-min clarity session</p>
+      </div>
+      <form id="booking-form" class="space-y-4" novalidate>
+        <!-- Name -->
+        <div class="space-y-1">
+          <label class="block text-sm font-semibold text-gray-700">Full Name <span class="text-red-500">*</span></label>
+          <input type="text" name="name" required placeholder="John Doe" class="booking-input">
+          <p class="text-red-500 text-xs hidden booking-error" id="berr-name">Please enter your full name</p>
+        </div>
+        <!-- Email -->
+        <div class="space-y-1">
+          <label class="block text-sm font-semibold text-gray-700">Email Address <span class="text-red-500">*</span></label>
+          <input type="email" name="email" required placeholder="john@example.com" class="booking-input">
+          <p class="text-red-500 text-xs hidden booking-error" id="berr-email">Please enter a valid email address</p>
+        </div>
+        <!-- Phone -->
+        <div class="space-y-1">
+          <label class="block text-sm font-semibold text-gray-700">Phone Number <span class="text-red-500">*</span></label>
+          <div class="flex gap-2">
+            <select name="countryCode" class="booking-input" style="width:105px;flex-shrink:0;background-image:url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e&quot;);background-position:right 0.4rem center;background-repeat:no-repeat;background-size:1.4em 1.4em;padding-right:2rem;-webkit-appearance:none;appearance:none;">
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+971">🇦🇪 +971</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+49">🇩🇪 +49</option>
+            </select>
+            <input type="tel" name="phone" required placeholder="9876543210" pattern="[0-9]{7,15}" class="booking-input" style="flex:1">
+          </div>
+          <p class="text-red-500 text-xs hidden booking-error" id="berr-phone">Please enter a valid phone number (7–15 digits)</p>
+        </div>
+        <!-- Profession -->
+        <div class="space-y-1">
+          <label class="block text-sm font-semibold text-gray-700">What best describes you? <span class="text-red-500">*</span></label>
+          <select name="profession" required class="booking-input" style="background-image:url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e&quot;);background-position:right 0.5rem center;background-repeat:no-repeat;background-size:1.5em 1.5em;padding-right:2.5rem;-webkit-appearance:none;appearance:none;">
+            <option value="" disabled selected>Select your profession</option>
+            <option value="Self Employed">Self Employed</option>
+            <option value="Working Professional">Working Professional</option>
+            <option value="Entrepreneur">Entrepreneur</option>
+            <option value="Career Break">Career Break (currently)</option>
+            <option value="Home Maker">Home Maker</option>
+            <option value="Student">Student</option>
+            <option value="Other">Other</option>
+          </select>
+          <p class="text-red-500 text-xs hidden booking-error" id="berr-profession">Please select your profession</p>
+        </div>
+        <!-- Submit -->
+        <button type="submit" id="booking-submit-btn" class="w-full py-4 px-6 rounded-lg text-white font-bold bg-ctaOrange hover:bg-ctaHover active:scale-[0.98] shadow-lg transition-all flex items-center justify-center gap-2.5 disabled:opacity-60 disabled:cursor-not-allowed" style="font-size:1rem">
+          <span id="booking-btn-text">Continue →</span>
+          <div id="booking-btn-loader" class="btn-spinner hidden"></div>
+        </button>
+      </form>
+    </div>
+
+    <!-- STEP 2: Calendar -->
+    <div id="booking-cal-panel" class="booking-panel hidden">
+      <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center gap-3">
+        <button onclick="bookingShowForm()" class="text-gray-500 hover:text-gray-800 transition-colors flex items-center gap-1 text-sm font-medium">
+          <span class="material-symbols-outlined" style="font-size:18px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20">arrow_back</span> Back
+        </button>
+        <div>
+          <h3 class="text-base font-bold text-gray-900 font-heading">Pick a Time</h3>
+          <p class="text-gray-500 text-xs">Choose your preferred date &amp; time</p>
+        </div>
+      </div>
+      <div id="my-cal-inline-30min"></div>
+    </div>
+
   </div>
 </div>
 
@@ -1114,24 +1200,116 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  function openCalendly() {
-    const modal = document.getElementById('calendly-modal');
-    const iframe = document.getElementById('calendly-iframe');
-    if (!iframe.src || iframe.src === 'about:blank') { iframe.src = iframe.dataset.src; }
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  // ── Tracking ────────────────────────────────────────────────
+  const _bookingTracking = {
+    ip: '', userAgent: navigator.userAgent,
+    utm_source: '', utm_medium: '', utm_campaign: '', utm_term: '', utm_content: ''
+  };
+  fetch('https://api64.ipify.org?format=json').then(r=>r.json()).then(d=>_bookingTracking.ip=d.ip).catch(()=>{});
+  (()=>{ const p = new URLSearchParams(window.location.search); ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{ _bookingTracking[k]=p.get(k)||''; }); })();
+  function _getISTTimestamp() {
+    const d = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+    const pad = n=>String(n).padStart(2,'0');
+    let h=d.getHours(); const ampm=h>=12?'PM':'AM'; h=h%12||12;
+    return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(h)}:${pad(d.getMinutes())}:${pad(d.getSeconds())} ${ampm}`;
   }
 
+  // ── Cal.com embed ────────────────────────────────────────────
+  let _calInitialized = false;
+  function _initCalEmbed() {
+    if (_calInitialized) return;
+    _calInitialized = true;
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement('script')).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const ns=ar[1];api.q=api.q||[];if(typeof ns==='string'){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,['initNamespace',ns]);}else p(cal,ar);return;}p(cal,ar);};})(window,'https://app.cal.com/embed/embed.js','init');
+    Cal('init','30min',{origin:'https://cal.com'});
+    Cal.ns['30min']('inline',{elementOrSelector:'#my-cal-inline-30min',config:{layout:'month_view',theme:'light'},calLink:'bond-style-club/30min'});
+    Cal.ns['30min']('ui',{theme:'light',hideEventTypeDetails:false,layout:'month_view'});
+  }
+
+  // ── Modal helpers ─────────────────────────────────────────────
+  function bookingShowForm() {
+    document.getElementById('booking-cal-panel').classList.add('hidden');
+    document.getElementById('booking-form-panel').classList.remove('hidden');
+    document.getElementById('calendly-modal-inner').style.maxWidth = '480px';
+  }
+  function bookingShowCal() {
+    document.getElementById('booking-form-panel').classList.add('hidden');
+    document.getElementById('booking-cal-panel').classList.remove('hidden');
+    document.getElementById('calendly-modal-inner').style.maxWidth = '900px';
+    _initCalEmbed();
+  }
+
+  function openCalendly() {
+    bookingShowForm();
+    document.getElementById('calendly-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
   function closeCalendly() {
     document.getElementById('calendly-modal').classList.remove('open');
     document.body.style.overflow = '';
   }
-
   function handleModalBgClick(e) {
     if (e.target === document.getElementById('calendly-modal')) closeCalendly();
   }
-
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCalendly(); });
+
+  // ── Booking form validation & submission ──────────────────────
+  (function(){
+    const form = document.getElementById('booking-form');
+    if (!form) return;
+
+    function validateField(field) {
+      const err = document.getElementById('berr-' + field.name);
+      let ok = field.checkValidity();
+      if (field.name === 'phone') ok = /^[0-9]{7,15}$/.test(field.value);
+      if (field.name === 'profession') ok = field.value !== '';
+      if (err) { ok || !field.value ? err.classList.add('hidden') : err.classList.remove('hidden'); }
+      field.classList.toggle('input-error', !ok && field.value !== '');
+      return ok;
+    }
+
+    form.querySelectorAll('input,select').forEach(f => {
+      f.addEventListener('blur', () => validateField(f));
+      f.addEventListener('input', () => { if (f.classList.contains('input-error')) validateField(f); });
+    });
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      let valid = true;
+      form.querySelectorAll('input,select').forEach(f => { if (!validateField(f)) valid = false; });
+      // Force-show errors on untouched required fields
+      form.querySelectorAll('input[required],select[required]').forEach(f => {
+        if (!f.value) {
+          const err = document.getElementById('berr-' + f.name);
+          if (err) err.classList.remove('hidden');
+          f.classList.add('input-error');
+          valid = false;
+        }
+      });
+      if (!valid) { form.querySelector('.input-error')?.focus(); return; }
+
+      const btn = document.getElementById('booking-submit-btn');
+      const txt = document.getElementById('booking-btn-text');
+      const ldr = document.getElementById('booking-btn-loader');
+      btn.disabled = true; txt.textContent = 'Processing...'; ldr.classList.remove('hidden');
+
+      const fd = new FormData(form);
+      const data = Object.fromEntries(fd.entries());
+      const payload = { ...data, fullPhone: data.countryCode+' '+data.phone, tracking: _bookingTracking, submittedAt: _getISTTimestamp(), source: window.location.href };
+
+      try {
+        const res = await fetch('https://hook.integrator.boost.space/952ph9fab7exmpc0urre3cdkrpb58e1w', {
+          method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('HTTP '+res.status);
+        // Success → show calendar
+        bookingShowCal();
+      } catch(err) {
+        console.error('Booking error:', err);
+        alert('Something went wrong. Please try again.');
+        btn.disabled = false; txt.textContent = 'Continue →'; ldr.classList.add('hidden');
+      }
+    });
+  })();
 </script>
 </body>
 </html>
