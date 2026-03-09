@@ -99,9 +99,6 @@
   .booking-input:-webkit-autofill,.booking-input:-webkit-autofill:focus { -webkit-box-shadow:0 0 0 30px #f9fafb inset!important;-webkit-text-fill-color:#1f2937!important; }
 
   @media (max-width: 639px) {
-    /* Scarcity dots: wrap on tiny screens */
-    .scarcity-dots { gap: 0.4rem !important; }
-    .scarcity-dot { width: 1.75rem !important; height: 1.75rem !important; font-size: 0.7rem !important; }
     /* FAQ question text smaller on xs */
     .faq-trigger span.font-heading { font-size: 0.875rem; }
   }
@@ -998,41 +995,40 @@
 </section>
 
 <!-- SECTION 11 — SCARCITY -->
-<section class="py-20 bg-terracotta relative overflow-hidden">
+<section class="py-20 bg-navy relative overflow-hidden">
   <!-- SWAP: scarcity-bg | concept: velvet rope / exclusive access / nearly-full venue -->
   <div class="absolute inset-0 pointer-events-none">
-    <img src="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?w=1200&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.08]">
+    <img src="https://images.unsplash.com/photo-1566937169390-7be4c63b8a0e?w=1200&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.06]">
   </div>
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
 
-    <div class="inline-flex items-center gap-2 bg-white/20 text-white font-bold text-sm px-5 py-2 rounded mb-6 md:mb-8 reveal">
-      <span class="material-symbols-outlined text-[16px]">schedule</span>
+    <div class="inline-flex items-center gap-2 bg-terracotta/15 border border-terracotta/30 text-terracotta font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded mb-6 md:mb-8 reveal">
+      <span class="w-1.5 h-1.5 rounded-full bg-terracotta inline-block"></span>
       Limited Availability
     </div>
 
     <h2 class="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-5 md:mb-6 reveal">Only 3 free clarity call spots remaining this month.</h2>
 
-    <p class="text-white/85 text-lg leading-relaxed max-w-2xl mx-auto mb-8 reveal">We only take 8 new clients per month to keep coaching quality high. 5 spots are already filled. Once the remaining 3 are gone, the next opening is next month.</p>
+    <p class="text-white/75 text-lg leading-relaxed max-w-2xl mx-auto mb-10 reveal">We only take 8 new clients per month to keep coaching quality high. 5 spots are already filled. Once the remaining 3 are gone, the next opening is next month.</p>
 
-    <div class="scarcity-dots flex flex-wrap items-center justify-center gap-3 mb-3 reveal">
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white flex items-center justify-center text-terracotta font-black text-sm shadow-sm">&#10003;</span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white flex items-center justify-center text-terracotta font-black text-sm shadow-sm">&#10003;</span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white flex items-center justify-center text-terracotta font-black text-sm shadow-sm">&#10003;</span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white flex items-center justify-center text-terracotta font-black text-sm shadow-sm">&#10003;</span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white flex items-center justify-center text-terracotta font-black text-sm shadow-sm">&#10003;</span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white/30 border-2 border-white/70"></span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white/30 border-2 border-white/70"></span>
-      <span class="scarcity-dot w-9 h-9 rounded-full bg-white/30 border-2 border-white/70"></span>
+    <!-- Capacity progress bar -->
+    <div class="max-w-sm mx-auto mb-10 reveal">
+      <div class="flex items-center justify-between text-sm mb-3">
+        <span class="text-white/70 font-medium">5 of 8 spots filled this month</span>
+        <span class="text-terracotta font-bold">3 remaining</span>
+      </div>
+      <div class="w-full h-3 bg-white/10 rounded-full overflow-hidden">
+        <div class="h-3 bg-terracotta rounded-full transition-all duration-700" style="width: 62.5%"></div>
+      </div>
     </div>
-    <p class="text-white/70 text-xs mb-10 reveal">5 filled &middot; 3 remaining</p>
 
     <div class="flex justify-center reveal">
-      <button onclick="openCalendly()" class="cta-pulse cta-btn flex w-full sm:w-auto max-w-sm sm:max-w-none px-6 py-4 sm:px-10 sm:py-5 bg-white text-terracotta font-bold rounded text-base sm:text-lg md:text-xl hover:bg-cream transition-colors items-center justify-center gap-3 font-heading cursor-pointer border-0 shadow-cta mb-4">
+      <button onclick="openCalendly()" class="cta-pulse cta-btn flex w-full sm:w-auto max-w-sm sm:max-w-none px-6 py-4 sm:px-10 sm:py-5 bg-terracotta text-white font-bold rounded text-base sm:text-lg md:text-xl hover:bg-terracottaDark transition-colors items-center justify-center gap-3 font-heading cursor-pointer border-0 shadow-cta mb-4">
         Claim Your Free Call Now
         <span class="material-symbols-outlined text-xl">arrow_forward</span>
       </button>
     </div>
-    <p class="text-white/70 text-sm reveal">This is not a fake countdown. We have a limited team and we refuse to rush the process.</p>
+    <p class="text-white/50 text-sm reveal">This is not a fake countdown. We have a limited team and we refuse to rush the process.</p>
 
   </div>
 </section>
