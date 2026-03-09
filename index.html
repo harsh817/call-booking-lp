@@ -99,8 +99,6 @@
   .booking-input:-webkit-autofill,.booking-input:-webkit-autofill:focus { -webkit-box-shadow:0 0 0 30px #f9fafb inset!important;-webkit-text-fill-color:#1f2937!important; }
 
   @media (max-width: 639px) {
-    /* Testimonials: extra top space for avatar overflow */
-    .testimonials-grid { padding-top: 2rem; }
     /* Scarcity dots: wrap on tiny screens */
     .scarcity-dots { gap: 0.4rem !important; }
     .scarcity-dot { width: 1.75rem !important; height: 1.75rem !important; font-size: 0.7rem !important; }
@@ -535,6 +533,93 @@
   </div>
 </section>
 
+<!-- SECTION TESTIMONIALS -->
+<section class="py-24 bg-cream" id="proof">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-16 reveal">
+      <span class="inline-flex items-center gap-2 bg-terracotta/10 border border-terracotta/25 text-terracotta font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded mb-4"><span class="w-1.5 h-1.5 rounded-full bg-terracotta inline-block"></span>Real Stories</span>
+      <h2 class="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-navy mb-4">Here Is What Our Men Say</h2>
+    </div>
+
+    <div class="testimonials-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-10">
+
+      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 reveal">
+        <!-- SWAP: testimonial-bangalore | concept: Bangalore city / tech office, ambient bg at opacity-[0.04] -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+          <img src="https://images.unsplash.com/photo-1596156874760-d41e4a4d0fb5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
+        </div>
+        <div class="absolute -top-7 left-8">
+          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta flex items-center justify-center text-white font-bold text-lg shadow-md">R</div>
+        </div>
+        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I am a software engineer in Bangalore. Good job, gym, everything. But around women I was completely useless. I could not hold a conversation for more than 60 seconds before going blank. After 8 weeks my mind stopped freezing. I am in a relationship now. I genuinely cannot explain how different life feels.&rdquo;</p>
+        <div><h4 class="font-heading font-bold text-base text-navy">Rohan S.</h4><p class="text-sm text-mutedText">Software Engineer &middot; Bangalore &middot; 29 years</p></div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 border-2 border-terracotta/50 ring-2 ring-terracotta/25 ring-offset-2 ring-offset-cream reveal">
+        <!-- Featured badge -->
+        <div class="absolute top-4 right-4 z-10">
+          <span class="inline-flex items-center gap-1 bg-terracotta text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">&#9733; Featured</span>
+        </div>
+        <!-- SWAP: testimonial-pune | concept: Pune / corporate professional context, ambient bg at opacity-[0.04] -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+          <img src="https://images.unsplash.com/photo-1577859849635-02cd5e83dde2?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
+        </div>
+        <div class="absolute -top-7 left-8">
+          <div class="w-14 h-14 rounded-full border-4 border-cream bg-navy flex items-center justify-center text-white font-bold text-lg shadow-md">A</div>
+        </div>
+        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;Family arranged three meetings in one year. All failed. The girls were interested but I kept saying boring things. After Bond Style Method the fourth meeting was completely different. I was calm, funny even. We are getting married in December. My parents cannot believe the change.&rdquo;</p>
+        <div><h4 class="font-heading font-bold text-base text-navy">Arjun M.</h4><p class="text-sm text-mutedText">CA &middot; Pune &middot; 31 years</p></div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 reveal">
+        <!-- SWAP: testimonial-mumbai | concept: Mumbai skyline / startup office, ambient bg at opacity-[0.04] -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+          <img src="https://images.unsplash.com/photo-1529931007293-0dfec93c0b22?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
+        </div>
+        <div class="absolute -top-7 left-8">
+          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta flex items-center justify-center text-white font-bold text-lg shadow-md">K</div>
+        </div>
+        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I had tried two dating coaches before this. Both gave me scripts and openers. Nothing worked. Bond Style Method was completely different, they found the actual reason I was failing in conversations. Within 5 weeks I noticed I was talking to strangers normally. Colleagues noticed something changed. Even my boss mentioned it.&rdquo;</p>
+        <div><h4 class="font-heading font-bold text-base text-navy">Karan P.</h4><p class="text-sm text-mutedText">Product Manager &middot; Mumbai &middot; 27 years</p></div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 reveal">
+        <!-- SWAP: testimonial-hyderabad | concept: Hyderabad tech / data analytics context, ambient bg at opacity-[0.04] -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+          <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
+        </div>
+        <div class="absolute -top-7 left-8">
+          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta/80 flex items-center justify-center text-white font-bold text-lg shadow-md">S</div>
+        </div>
+        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I am an introvert. I was worried this program was only for loud, outgoing types. It is not. They worked with my personality, not against it. I do not need to become someone I am not. I just needed to remove the fear that was blocking the real me. That is what happened.&rdquo;</p>
+        <div><h4 class="font-heading font-bold text-base text-navy">Siddharth N.</h4><p class="text-sm text-mutedText">Data Analyst &middot; Hyderabad &middot; 28 years</p></div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 reveal">
+        <!-- SWAP: testimonial-chennai | concept: Chennai city / civil engineering infrastructure, ambient bg at opacity-[0.04] -->
+        <div class="absolute inset-0 pointer-events-none overflow-hidden rounded-xl">
+          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
+        </div>
+        <div class="absolute -top-7 left-8">
+          <div class="w-14 h-14 rounded-full border-4 border-cream bg-navy/80 flex items-center justify-center text-white font-bold text-lg shadow-md">N</div>
+        </div>
+        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
+        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I had liked a girl in my friend group for one year. Always waiting for the right moment. After applying the method, I finally talked to her properly. She said she had been wondering why I never made a move. We have been together for 6 months now. I wasted one year doing nothing.&rdquo;</p>
+        <div><h4 class="font-heading font-bold text-base text-navy">Nikhil R.</h4><p class="text-sm text-mutedText">Civil Engineer &middot; Chennai &middot; 25 years</p></div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-xs text-mutedText/60 mt-10 max-w-xl mx-auto reveal">Results shown are from real clients of BondStyle. Individual results will vary based on effort, starting point, and dedication.</p>
+
+  </div>
+</section>
+
 <!-- SECTION 4 — THE METHOD -->
 <section class="py-24 bg-white border-y border-gray-100" id="method">
   <div class="max-w-6xl mx-auto px-6">
@@ -738,93 +823,6 @@
       <h3 class="font-heading text-xl md:text-2xl font-bold text-white mb-4 md:mb-5">The Real Cost of Not Fixing This</h3>
       <p class="text-base md:text-lg text-white/80 leading-relaxed">Most men figure this out after 7 to 10 years of painful mistakes, if they ever do. Some spend years in fixing on their own. This call gives you a direct, structured path to the same result in weeks, not years. The question is not whether to fix this. The question is how long you are willing to wait.</p>
     </div>
-
-  </div>
-</section>
-
-<!-- SECTION 7 — TESTIMONIALS -->
-<section class="py-24 bg-cream" id="proof">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-16 reveal">
-      <span class="inline-flex items-center gap-2 bg-terracotta/10 border border-terracotta/25 text-terracotta font-semibold text-xs uppercase tracking-widest px-4 py-1.5 rounded mb-4"><span class="w-1.5 h-1.5 rounded-full bg-terracotta inline-block"></span>Real Stories</span>
-      <h2 class="font-heading text-2xl sm:text-3xl md:text-5xl font-bold text-navy mb-4">Here Is What Our Men Say</h2>
-    </div>
-
-    <div class="testimonials-grid grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
-        <!-- SWAP: testimonial-bangalore | concept: Bangalore city / tech office, ambient bg at opacity-[0.04] -->
-        <div class="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1596156874760-d41e4a4d0fb5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
-        </div>
-        <div class="absolute -top-7 left-8">
-          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta flex items-center justify-center text-white font-bold text-lg shadow-md">R</div>
-        </div>
-        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I am a software engineer in Bangalore. Good job, gym, everything. But around women I was completely useless. I could not hold a conversation for more than 60 seconds before going blank. After 8 weeks my mind stopped freezing. I am in a relationship now. I genuinely cannot explain how different life feels.&rdquo;</p>
-        <div><h4 class="font-heading font-bold text-base text-navy">Rohan S.</h4><p class="text-sm text-mutedText">Software Engineer &middot; Bangalore &middot; 29 years</p></div>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 border-2 border-terracotta/50 ring-2 ring-terracotta/25 ring-offset-2 ring-offset-cream overflow-hidden reveal">
-        <!-- Featured badge -->
-        <div class="absolute top-4 right-4 z-10">
-          <span class="inline-flex items-center gap-1 bg-terracotta text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">&#9733; Featured</span>
-        </div>
-        <!-- SWAP: testimonial-pune | concept: Pune / corporate professional context, ambient bg at opacity-[0.04] -->
-        <div class="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1577859849635-02cd5e83dde2?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
-        </div>
-        <div class="absolute -top-7 left-8">
-          <div class="w-14 h-14 rounded-full border-4 border-cream bg-navy flex items-center justify-center text-white font-bold text-lg shadow-md">A</div>
-        </div>
-        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;Family arranged three meetings in one year. All failed. The girls were interested but I kept saying boring things. After Bond Style Method the fourth meeting was completely different. I was calm, funny even. We are getting married in December. My parents cannot believe the change.&rdquo;</p>
-        <div><h4 class="font-heading font-bold text-base text-navy">Arjun M.</h4><p class="text-sm text-mutedText">CA &middot; Pune &middot; 31 years</p></div>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
-        <!-- SWAP: testimonial-mumbai | concept: Mumbai skyline / startup office, ambient bg at opacity-[0.04] -->
-        <div class="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1529931007293-0dfec93c0b22?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
-        </div>
-        <div class="absolute -top-7 left-8">
-          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta flex items-center justify-center text-white font-bold text-lg shadow-md">K</div>
-        </div>
-        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I had tried two dating coaches before this. Both gave me scripts and openers. Nothing worked. Bond Style Method was completely different, they found the actual reason I was failing in conversations. Within 5 weeks I noticed I was talking to strangers normally. Colleagues noticed something changed. Even my boss mentioned it.&rdquo;</p>
-        <div><h4 class="font-heading font-bold text-base text-navy">Karan P.</h4><p class="text-sm text-mutedText">Product Manager &middot; Mumbai &middot; 27 years</p></div>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
-        <!-- SWAP: testimonial-hyderabad | concept: Hyderabad tech / data analytics context, ambient bg at opacity-[0.04] -->
-        <div class="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
-        </div>
-        <div class="absolute -top-7 left-8">
-          <div class="w-14 h-14 rounded-full border-4 border-cream bg-terracotta/80 flex items-center justify-center text-white font-bold text-lg shadow-md">S</div>
-        </div>
-        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I am an introvert. I was worried this program was only for loud, outgoing types. It is not. They worked with my personality, not against it. I do not need to become someone I am not. I just needed to remove the fear that was blocking the real me. That is what happened.&rdquo;</p>
-        <div><h4 class="font-heading font-bold text-base text-navy">Siddharth N.</h4><p class="text-sm text-mutedText">Data Analyst &middot; Hyderabad &middot; 28 years</p></div>
-      </div>
-
-      <div class="bg-white p-8 rounded-xl shadow-soft relative mt-8 overflow-hidden reveal">
-        <!-- SWAP: testimonial-chennai | concept: Chennai city / civil engineering infrastructure, ambient bg at opacity-[0.04] -->
-        <div class="absolute inset-0 pointer-events-none">
-          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=40" alt="" class="w-full h-full object-cover opacity-[0.04]">
-        </div>
-        <div class="absolute -top-7 left-8">
-          <div class="w-14 h-14 rounded-full border-4 border-cream bg-navy/80 flex items-center justify-center text-white font-bold text-lg shadow-md">N</div>
-        </div>
-        <div class="flex justify-end mb-4 mt-2"><span class="text-amber-400 text-lg tracking-tight">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-        <p class="text-[15px] text-navy/80 italic mb-6 leading-relaxed">&ldquo;I had liked a girl in my friend group for one year. Always waiting for the right moment. After applying the method, I finally talked to her properly. She said she had been wondering why I never made a move. We have been together for 6 months now. I wasted one year doing nothing.&rdquo;</p>
-        <div><h4 class="font-heading font-bold text-base text-navy">Nikhil R.</h4><p class="text-sm text-mutedText">Civil Engineer &middot; Chennai &middot; 25 years</p></div>
-      </div>
-
-    </div>
-
-    <p class="text-center text-xs text-mutedText/60 mt-10 max-w-xl mx-auto reveal">Results shown are from real clients of BondStyle. Individual results will vary based on effort, starting point, and dedication.</p>
 
   </div>
 </section>
