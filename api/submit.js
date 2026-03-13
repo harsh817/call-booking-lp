@@ -8,7 +8,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  const webhookUrl = process.env.BOOST_WEBHOOK_URL;
+  const webhookUrl = (process.env.BOOST_WEBHOOK_URL || '').trim();
   if (!webhookUrl) {
     return res.status(500).json({ error: 'Server misconfigured' });
   }
