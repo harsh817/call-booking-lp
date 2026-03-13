@@ -227,7 +227,7 @@
       localStorage.setItem(_LS_KEY, JSON.stringify(data));
     } catch(e) {}
   }
-  (function _restoreForm() {
+  function _restoreForm() {
     const p = new URLSearchParams(window.location.search);
     let saved = {};
     try { saved = JSON.parse(localStorage.getItem(_LS_KEY) || '{}'); } catch(e) {}
@@ -243,7 +243,11 @@
       const el = document.querySelector(`[name="${name}"]`);
       if (el) el.value = val;
     });
-  })();
+  }
+  document.addEventListener('DOMContentLoaded', _restoreForm);
+  window.addEventListener('storage', function(e) {
+    if (e.key === _LS_KEY) _restoreForm();
+  });
 
   const form = document.getElementById('consultation-form');
   const inputs = form.querySelectorAll('input, select');

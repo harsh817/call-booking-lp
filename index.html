@@ -1339,6 +1339,7 @@ fbq('track','PageView');
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      _saveBookingForm();
       let valid = true;
       form.querySelectorAll('input,select').forEach(f => { if (!validateField(f)) valid = false; });
       // Force-show errors on untouched required fields
