@@ -241,7 +241,7 @@
     Object.entries(prefill).forEach(([name, val]) => {
       if (!val) return;
       const el = document.querySelector(`[name="${name}"]`);
-      if (el && !el.value) el.value = val;
+      if (el) el.value = val;
     });
   })();
 

@@ -1256,7 +1256,7 @@ fbq('track','PageView');
     Object.entries(prefill).forEach(([name, val]) => {
       if (!val) return;
       const el = f.querySelector(`[name="${name}"]`);
-      if (el && !el.value) el.value = val;
+      if (el) el.value = val;
     });
   }
   function _getISTTimestamp() {
