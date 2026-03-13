@@ -1362,7 +1362,7 @@ fbq('track','PageView');
       const payload = { ...data, fullPhone: data.countryCode+' '+data.phone, tracking: _bookingTracking, submittedAt: _getISTTimestamp(), source: window.location.href };
 
       try {
-        const res = await fetch('https://hook.integrator.boost.space/952ph9fab7exmpc0urre3cdkrpb58e1w', {
+        const res = await fetch('/api/submit', {
           method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(payload)
         });
         if (!res.ok) throw new Error('HTTP '+res.status);

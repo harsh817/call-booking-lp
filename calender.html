@@ -177,7 +177,7 @@
 </div>
 
 <script>
-  const WEBHOOK_URL = 'https://hook.integrator.boost.space/952ph9fab7exmpc0urre3cdkrpb58e1w';
+  const WEBHOOK_URL = '/api/submit';
 
   function getISTTimestamp() {
     const now = new Date();
@@ -315,8 +315,6 @@
       submittedAt: getISTTimestamp(),
       source: window.location.href
     };
-
-    console.log('Submitting Payload:', fullPayload);
 
     try {
       const response = await fetch(WEBHOOK_URL, {
