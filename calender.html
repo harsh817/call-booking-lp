@@ -375,13 +375,14 @@
   Cal("init", "30min", {origin:"https://cal.com"});
 
   (function(){
-    var _n = document.querySelector('[name="name"]')?.value||'';
-    var _e = document.querySelector('[name="email"]')?.value||'';
-    var _p = [document.querySelector('[name="countryCode"]')?.value,document.querySelector('[name="phone"]')?.value].filter(Boolean).join(' ');
+    var _n = encodeURIComponent(document.querySelector('[name="name"]')?.value||'');
+    var _e = encodeURIComponent(document.querySelector('[name="email"]')?.value||'');
+    var _p = encodeURIComponent([document.querySelector('[name="countryCode"]')?.value,document.querySelector('[name="phone"]')?.value].filter(Boolean).join(' '));
+    var _calLink = 'bond-style-club/30min' + (_n||_e ? '?name='+_n+'&email='+_e+'&notes='+_p : '');
     Cal.ns["30min"]("inline", {
       elementOrSelector: "#my-cal-inline-30min",
-      config: {"layout":"month_view","theme":"light",name:_n,email:_e,notes:_p},
-      calLink: "bond-style-club/30min",
+      config: {"layout":"month_view","theme":"light"},
+      calLink: _calLink,
     });
   })();
 
