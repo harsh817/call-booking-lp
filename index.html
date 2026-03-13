@@ -85,7 +85,7 @@
   }
   /* Booking form panels */
   #booking-cal-panel #my-cal-inline-30min { width: 100%; height: 600px; }
-  @media (max-width: 639px) { #booking-cal-panel #my-cal-inline-30min { height: 75vh; min-height: 460px; } }
+  @media (max-width: 639px) { #booking-cal-panel #my-cal-inline-30min { height: calc(90svh - 110px); min-height: 400px; } }
   .booking-panel { transition: opacity 0.3s ease, transform 0.3s ease; }
   .booking-panel.hidden { display: none; }
   @keyframes bookingSlideIn { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
@@ -93,6 +93,7 @@
   @keyframes btnSpin { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
   .btn-spinner { width:18px;height:18px;border:2px solid rgba(255,255,255,0.35);border-top-color:#fff;border-radius:50%;animation:btnSpin 0.8s linear infinite;display:inline-block;flex-shrink:0; }
   .booking-input { width:100%;padding:0.75rem 1rem;border-radius:0.5rem;border:1px solid #d1d5db;background:#f9fafb;outline:none;transition:border-color 0.15s,box-shadow 0.15s;color:#1f2937;-webkit-text-fill-color:#1f2937;font-size:0.9375rem; }
+  .booking-input::placeholder { color: #c5cdd8; -webkit-text-fill-color: #c5cdd8; opacity: 1; }
   .booking-input:hover { border-color:#9ca3af; }
   .booking-input:focus { border-color:#3b82f6;box-shadow:0 0 0 3px rgba(59,130,246,0.12);background:#fff; }
   .booking-input.input-error { border-color:#ef4444;box-shadow:0 0 0 3px rgba(239,68,68,0.10); }
@@ -709,7 +710,8 @@ fbq('track','PageView');
 
       <!-- SWAP: social-os-in-person | concept: two people in genuine engaged conversation, coffee shop or casual setting -->
       <div class="bg-white/5 border border-white/10 rounded-2xl overflow-hidden reveal">
-        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&auto=format&fit=crop&q=80" alt="Two people in genuine conversation" class="w-full aspect-[16/9] object-cover">
+        <img src="https://res.cloudinary.com/dpkzdwprk/image/upload/v1773312889/Gemini_Generated_Image_rwdhvhrwdhvhrwdh_dt8unw.webp
+        " alt="Two people in genuine conversation" class="w-full aspect-[16/9] object-cover">
         <div class="p-7">
           <h4 class="font-heading font-bold text-lg text-white mb-3">In-Person Conversations</h4>
           <p class="text-white/70 leading-relaxed text-sm">No more blank mind. No more awkward silences. You hold conversations naturally for as long as you want.</p>
@@ -1189,14 +1191,9 @@ fbq('track','PageView');
 
     <!-- STEP 2: Calendar -->
     <div id="booking-cal-panel" class="booking-panel hidden">
-      <div class="px-6 py-4 border-b border-gray-100 bg-gray-50 flex items-center gap-3">
-        <button onclick="bookingShowForm()" class="text-gray-500 hover:text-gray-800 transition-colors flex items-center gap-1 text-sm font-medium">
-          <span class="material-symbols-outlined" style="font-size:18px;font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 20">arrow_back</span> Back
-        </button>
-        <div>
-          <h3 class="text-base font-bold text-gray-900 font-heading">Pick a Time</h3>
-          <p class="text-gray-500 text-xs">Choose your preferred date &amp; time</p>
-        </div>
+      <div class="px-6 py-4 border-b border-gray-100 bg-gray-50">
+        <h3 class="text-base font-bold text-gray-900 font-heading">Pick a Time</h3>
+        <p class="text-gray-500 text-xs">Choose your preferred date &amp; time</p>
       </div>
       <div id="my-cal-inline-30min"></div>
     </div>
@@ -1234,6 +1231,34 @@ fbq('track','PageView');
   };
   fetch('https://api64.ipify.org?format=json').then(r=>r.json()).then(d=>_bookingTracking.ip=d.ip).catch(()=>{});
   (()=>{ const p = new URLSearchParams(window.location.search); ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{ _bookingTracking[k]=p.get(k)||''; }); })();
+
+  // ── Form persistence (localStorage + URL params) ─────────────
+  const _LS_KEY = 'bsc_booking_v1';
+  function _saveBookingForm() {
+    const f = document.getElementById('booking-form');
+    if (!f) return;
+    const data = Object.fromEntries(new FormData(f).entries());
+    try { localStorage.setItem(_LS_KEY, JSON.stringify(data)); } catch(e) {}
+  }
+  function _restoreBookingForm() {
+    const f = document.getElementById('booking-form');
+    if (!f) return;
+    const p = new URLSearchParams(window.location.search);
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(_LS_KEY) || '{}'); } catch(e) {}
+    const prefill = {
+      name:        p.get('name')  || saved.name        || '',
+      email:       p.get('email') || saved.email       || '',
+      phone:       p.get('phone') || saved.phone       || '',
+      countryCode: saved.countryCode || '',
+      profession:  saved.profession  || ''
+    };
+    Object.entries(prefill).forEach(([name, val]) => {
+      if (!val) return;
+      const el = f.querySelector(`[name="${name}"]`);
+      if (el && !el.value) el.value = val;
+    });
+  }
   function _getISTTimestamp() {
     const d = new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
     const pad = n=>String(n).padStart(2,'0');
@@ -1261,12 +1286,23 @@ fbq('track','PageView');
   function bookingShowCal() {
     document.getElementById('booking-form-panel').classList.add('hidden');
     document.getElementById('booking-cal-panel').classList.remove('hidden');
-    document.getElementById('calendly-modal-inner').style.maxWidth = '900px';
+    const inner = document.getElementById('calendly-modal-inner');
+    if (window.innerWidth < 640) {
+      inner.style.maxWidth = '100%';
+      inner.style.maxHeight = '90svh';
+      inner.style.overflowY = 'auto';
+      inner.style.webkitOverflowScrolling = 'touch';
+    } else {
+      inner.style.maxWidth = '900px';
+      inner.style.maxHeight = '';
+      inner.style.overflowY = '';
+    }
     _initCalEmbed();
   }
 
   function openCalendly() {
     bookingShowForm();
+    _restoreBookingForm();
     document.getElementById('calendly-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -1298,6 +1334,8 @@ fbq('track','PageView');
       f.addEventListener('blur', () => validateField(f));
       f.addEventListener('input', () => { if (f.classList.contains('input-error')) validateField(f); });
     });
+    form.addEventListener('input', _saveBookingForm);
+    form.addEventListener('change', _saveBookingForm);
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
